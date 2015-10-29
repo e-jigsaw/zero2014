@@ -3,8 +3,18 @@
   "version": "0.0.0",
   "description": "zero2015",
   "main": "index.js",
+  "config": {
+    "DEST": "build",
+    "PORT": "3000"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm-run-all build:before -p build:assets:*",
+    "build:before": "mkdir -p $npm_package_config_DEST",
+    "build:assets:css": "cp node_modules/purecss/build/pure-min.css $npm_package_config_DEST/index.css && stylus -c -p src/index.styl >> $npm_package_config_DEST/index.css",
+    "build:assets:images": "rm -rf $npm_package_config_DEST/images && cp -r src/images $npm_package_config_DEST/images",
+    "build:assets:jade": "jade src/index.jade --out $npm_package_config_DEST",
+    "clean": "rm -rf $npm_package_config_DEST",
+    "serve": "static -p $npm_package_config_PORT $npm_package_config_DEST"
   },
   "repository": {
     "type": "git",
@@ -15,5 +25,12 @@
   "bugs": {
     "url": "https://github.com/e-jigsaw/zero2015/issues"
   },
-  "homepage": "https://github.com/e-jigsaw/zero2015#readme"
+  "homepage": "https://github.com/e-jigsaw/zero2015#readme",
+  "devDependencies": {
+    "jade": "^1.11.0",
+    "node-static": "^0.7.7",
+    "npm-run-all": "^1.2.12",
+    "purecss": "^0.6.0",
+    "stylus": "^0.52.4"
+  }
 }
