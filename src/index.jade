@@ -1,13 +1,61 @@
 extends layout
 
+block title
+  title 映画上映 in 「冬の友 金沢の冬の過ごしかた 2015」 | かなざわ映画の会
+
+block ogps
+  meta(property='og:title', content='映画上映 in 「冬の友 金沢の冬の過ごしかた 2015」 | かなざわ映画の会')
+  meta(property='og:type', content='article')
+  meta(property='og:url', content='http://www.eiganokai.com/event/zero2015/index.html')
+  meta(property='og:image', content='http://www.eiganokai.com/event/zero2015/images/main.png')
+  meta(property='og:description', content='映画上映 in 「冬の友 金沢の冬の過ごしかた 2015」')
+  meta(property='og:locale', content='ja_JP')
+
 block body
   .pure-u-1-1
     #main
       h1 映画上映 in 「冬の友 金沢の冬の過ごしかた 2015」
       .pure-u-sm-3-4.center
-        img.max(src='./images/main.png')
-      .desc
-        | イベント「
-        a.dottedAnchor(href='http://otomekanazawa.jugem.jp/?eid=413') 冬の友 金沢の冬の過ごしかた
-        | 」にて16ミリフィルムのアニメーション映画を上映します。
-      .desc 屋外テントでの上映になりますので、暖かくしていらしてください。
+        a(href='./images/main.png', target='_blank')
+          img.max(src='./images/main.png')
+      .film
+        p
+          | イベント「
+          a.dottedAnchor(href='http://otomekanazawa.jugem.jp/?eid=413') 冬の友 金沢の冬の過ごしかた
+          | 」にて16ミリフィルムのアニメーション映画を上映します。
+        p 屋外テントでの上映になりますので、暖かくしていらしてください。
+      h2 概要
+      .film.about
+        p 入場料: 無料
+        p 場所: しいのき迎賓館うらの広場
+        p タイムテーブル
+        ul(style='list-style: none;')
+          li 11月7日(土)
+          ul
+            li 14時〜 太陽の王子　ホルスの大冒険
+            li 16時〜 空飛ぶゆうれい船
+          li 11月8日(日)
+          ul
+            li 11時〜 太陽の王子　ホルスの大冒険
+            li 14時〜 空飛ぶゆうれい船
+        p
+          | ※「
+          a.dottedAnchor(href='http://kenkenbottori.jimdo.com/') けんけんぼっとり、なんばみそ
+          | 」は久田歩美さんによる上映になります。　
+      h2 作品解説
+      .film
+        h3 空飛ぶゆうれい船
+        .capture
+          img(src='./images/ghostship.png')
+        .info
+          p 1966年　16ミリ　60分
+        .desc
+          p ある霧の深い夜、濃霧の中からボロボロの帆を翻した船が…。隼人少年がその謎に迫る！　原作は、石森章太郎の短編漫画「ゆうれい船」。1969年の夏に「東映まんがまつり」で劇場公開された。宮崎駿が原画を手がけた巨大ロボット・ゴーレムと国防軍の戦車や戦闘機との戦闘シーンも必見。
+      .film
+        h3 太陽の王子　ホルスの大冒険
+        .capture
+          img(src='./images/horus.png')
+        .info
+          p 1968年　16ミリ　82分
+        .desc
+          p アイヌの民族叙事詩を基にした深沢一夫の戯曲『チキサニの太陽』を、舞台を北欧に変えて映画化。力をあわせて立ち上がった人間の強さを訴える。高畑勲の初監督作品。宮崎駿と高畑勲コンビの原点アニメでもある。大方斐紗子や市原悦子、平幹二朗らが声で出演。
